@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gymmy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif; /* Шрифт для других элементов */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* Позволяет фону занимать всю высоту окна */
+            background-image: url('https://web-school.susu.ru/akaza/wp-content/uploads/sites/106/2024/05/1667475941_17-sportishka-com-p-kachalka-zal-instagram-17.jpg');
+            background-size: cover; /* Изображение покрывает фон */
+            background-position: center;
+            background-repeat: no-repeat; /* Запретить повтор изображения */
+            position: relative; /* Позиция относительно других элементов */
+            width: 100%;
+        }
+        .container {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 350px;
+            box-sizing: border-box; /* Включает отступы в общую ширину */
+            font-family: 'Nunito', sans-serif;
+        }
+        h1 {
+            font-family: 'Bebas Neue', sans-serif; /* Шрифт для заголовка Gymmy */
+            font-style: italic; /* Курсив для Gymmy */
+            font-size: 36px; /* Размер шрифта */
+            color: #333; /* Цвет текста */
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input {
+            margin: 10px 0;
+            padding: 12px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box; /* Включает отступы в общую ширину */
+            font-family: 'Nunito', sans-serif;
+        }
+        input:focus {
+            border-color: #007BFF;
+            outline: none;
+        }
+        button {
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            font-family: 'Nunito', sans-serif;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gymmy</h1>
+        <input type="text" placeholder="Логин" id="username" required>
+        <input type="password" placeholder="Пароль" id="password" required>
+        <button onclick="login()">Войти</button>
+    </div>
+
+    <script>
+        var Module = {
+            onRuntimeInitialized: function() {
+                // Получаем доступ к функции showHelloWorld
+                const showHelloWorld = Module.cwrap('showHelloWorld', null, []);
+                
+                // Добавляем обработчик клика по телу страницы
+                document.body.onclick = function() {
+                    showHelloWorld(); // Вызываем функцию при клике
+                };
+            }
+        };
+    </script>
+    <script src="output.js"></script>
+</html>
